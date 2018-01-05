@@ -10,11 +10,14 @@
       <nav class="mdl-navigation">
         <router-link class="mdl-navigation__link" to="/" @click.native="hideMenu">Home</router-link>
         <router-link class="mdl-navigation__link" to="/post" @click.native="hideMenu">Post a picture</router-link>
+        <router-link class="mdl-navigation__link" to="/camera" @click.native="hideMenu">Camera</router-link>
+        <router-link class="mdl-navigation__link" to="/reddit" @click.native="hideMenu">Reddit</router-link>
+        <router-link class="mdl-navigation__link" to="/product" @click.native="hideMenu">Product</router-link>
       </nav>
     </div>
     <main class="mdl-layout__content">
       <div class="page-content">
-        <router-view></router-view>
+        <router-view/>
       </div>
     </main>
   </div>

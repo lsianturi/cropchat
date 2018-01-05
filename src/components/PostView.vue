@@ -8,11 +8,11 @@
       </div>
       <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded is-dirty">
-          <input id="username" v-model="title" type="text" class="mdl-textfield__input"/>
+          <input id="username" v-model="comment" type="text" class="mdl-textfield__input"/>
           <label for="username" class="mdl-textfield__label">Describe me</label>
         </div>
         <div class="actions">
-          <a @click.prevent="postCat(catUrl, title)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          <a @click.prevent="postCat(catUrl, comment)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
             POST A CAT
           </a>
         </div>
@@ -35,6 +35,7 @@ export default {
   mounted () {
     this.$http.get('https://thecatapi.com/api/images/get?format=xml&results_per_page=1').then(response => {
       this.catUrl = parse(response.body).root.children['0'].children['0'].children['0'].children['0'].content
+      console.log(response.body)
     })
   }
 }

@@ -26,7 +26,7 @@
   export default {
     data () {
       return {
-        cat: null
+        'cat': null
       }
     },
     mounted () {
